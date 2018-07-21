@@ -1,0 +1,16 @@
+sigmoid function will be one of the need-to-complete files
+
+I think we dont need to run a neural network with already trained weights. But could be useful for understanding anyway.
+
+I download and translate 5k sample out of 60k handwritten digits from The MNIST database. Each sample 20x20 pixel.
+
+I changed the label of digit '0' from '0' to '10' because there is no 0-index in MATLAB and this makes things easier later.
+
+I 'unrolled' each 20x20 sample into a single row in the 5000x400 data matrix. Each row represents one sample.
+
+Finally, I have 1 5000x400 matrix that contains a sample in its each row, and first 20 numbers represent the first row of the first image and second 20 numbers represent the second row of the first image,.... Also I have 1x400 matrix (400 dimensional vector) that represents correct labels of the samples.
+
+Our neural network will have 3 layers; first layer is input layer that has 400 units (because each input sample has 20x20 = 400 pixel in it) and third layer is output layer that has 10 units (because we have 10 different digits). Second layer is the hidden layer that has 25 units in it. Those number of units are excluded the bias unit which we will add to each layer to regularize the activation threshold. We may change number of units in the hidden layer later. We also can add another hidden layer to the NN but I think one hidden layer with 25 units should work fine. Our goal is reach to 98% accuracy.
+
+I already trained NN and save its weights to Theta1 and Theta2 beforehand so one can check the cost function if it is right or wrong. The cost should be about 0.287629... .
+
